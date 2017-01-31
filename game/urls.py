@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from game.views import IndexView, NotFoundView
+from django.contrib.auth.views import login, logout
+
+from game.views import IndexView, NotFoundView, RegisterCreateView
 
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^register/$', RegisterCreateView.as_view(), name='register'),
+    url(r'^login/$', login, {"template_name": "login.html"}, name='login'),
+    url(r'^logout/$', logout, {"template_name": "logout.html"}, name='logout'),
     url(r'^404/$', NotFoundView.as_view(), name='404'),
     url(r'^admin/', admin.site.urls),
 ]

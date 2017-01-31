@@ -36,12 +36,12 @@
             {% if request.user.is_authenticated %}
               <li><a>{{ request.user.get_full_name }}</a></li>
               <li class="{% block nav_class_logout %}{% endblock %}">
-              <a href="{% url '404' %}">Выйти</a></li>
+              <a href="{% url 'logout' %}">Выйти</a></li>
             {% else %}
               <li class="{% block nav_class_register %}{% endblock %}">
-              <a href="{% url '404' %}">Зарегистрироваться</a></li>
+              <a href="{% url 'register' %}">Зарегистрироваться</a></li>
               <li class="{% block nav_class_login %}{% endblock %}">
-              <a href="{% url '404' %}">Войти</a></li>
+              <a href="{% url 'login' %}">Войти</a></li>
             {% endif %}
           </ul>
         </div><!-- /.navbar-collapse -->
