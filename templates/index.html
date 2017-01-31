@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}Главная{% endblock%}
+
+
+{% block nav_class_index %}active{% endblock%}
+
+
+
+{% block content %}
+    {% if messages %}
+      <ul class="list-group">
+      {% for message in messages %}
+        <p class="list-group-item list-group-item-success">{{ message }}</p>
+      {% endfor %}
+      </ul>
+    {% endif %}
+	<h1 align="center"><i><b>Выбери игру.</b></i></h1>
+	<p align="justify">К сожалению, пока нет ни одной игры. Зайдите чуть позже.</p>
+{% endblock content %}

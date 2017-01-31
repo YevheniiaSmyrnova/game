@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from game.views import IndexView, NotFoundView
+
 
 urlpatterns = [
+    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^404/$', NotFoundView.as_view(), name='404'),
     url(r'^admin/', admin.site.urls),
 ]
