@@ -27,10 +27,12 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="{% block nav_class_exhibition %}{% endblock %}">
-            <a href="{% url '404' %}">Мой профиль</a></li>
-            <li class="{% block nav_class_collector %}{% endblock %}">
+          {% if request.user.is_authenticated %}
+            <li class="{% block nav_class_profile %}{% endblock %}">
+            <a href="{% url 'player:detail' request.user.player.id %}">Мой профиль</a></li>
+            <li class="{% block nav_class_record %}{% endblock %}">
             <a href="{% url '404' %}">Рекорды</a></li>
+          {% endif %}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
