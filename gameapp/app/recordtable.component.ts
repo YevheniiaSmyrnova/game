@@ -5,5 +5,5 @@ import { Input, Component } from '@angular/core';
     templateUrl: 'app/recordtable.component.html'
 })
 export class RecordTableComponent {
-    @Input() players: list;
+    @Input() players;
 }
