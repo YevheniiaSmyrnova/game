@@ -6,14 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var Section = (function () {
+    function Section(section) {
+        this.section = section;
+    }
+    return Section;
+}());
+exports.Section = Section;
 var SidebarComponent = (function () {
     function SidebarComponent() {
+        this.section = 'myPage';
     }
+    SidebarComponent.prototype.toggle = function (section) {
+        this.section = section;
+    };
     return SidebarComponent;
 }());
 SidebarComponent = __decorate([
     core_1.Component({
-        selector: 'sidebar',
+        selector: exports.Section = Section = 'sidebar',
         templateUrl: 'app/sidebar.component.html'
     })
 ], SidebarComponent);
