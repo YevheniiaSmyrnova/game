@@ -1,25 +1,23 @@
-<div class="w3-container w3-margin w3-padding-32">
-    <!-- Sidebar -->
-    <div class="w3-sidebar w3-bar-block" style="wight:14%; margin-left:10%; margin-right:10%">
-        <input (click)="toggle('profile')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="My profile">
-        <input (click)="toggle('news')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="News">
-        <input (click)="toggle('games')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="Games">
-        <input (click)="toggle('records')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="Record table">
-    </div>
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block" style="wight:14%;">
+    <input (click)="toggle('profile')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="My profile">
+    <input (click)="toggle('news')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="News">
+    <input (click)="toggle('games')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="Games">
+    <input (click)="toggle('records')" type="button" class="w3-bar-item w3-button w3-margin-right w3-large w3-text-teal w3-hover-teal" value="Record table">
+</div>
 
-    <!-- Page Content -->
-    <div style="margin-left:30%; margin-right:10%">
-        <div *ngIf="section == 'profile'">
-            <profile></profile>
-        </div>
-        <div *ngIf="section == 'news'">
-            <not-found></not-found>
-        </div>
-        <div *ngIf="section == 'games'">
-            <not-found></not-found>
-        </div>
-        <div *ngIf="section == 'records'">
-            <record></record>
-        </div>
+<!-- Page Content -->
+<div style="margin-left:20%">
+    <div *ngIf="section == 'profile'">
+        <profile></profile>
+    </div>
+    <div *ngIf="section == 'news'">
+        <not-found></not-found>
+    </div>
+    <div *ngIf="section == 'games'">
+        <not-found></not-found>
+    </div>
+    <div *ngIf="section == 'records'">
+        <record></record>
     </div>
 </div>
