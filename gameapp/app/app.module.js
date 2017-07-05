@@ -13,6 +13,7 @@ var sidebar_component_1 = require("./sidebar.component");
 var not_found_component_1 = require("./not-found.component");
 var record_component_1 = require("./record.component");
 var record_table_component_1 = require("./record-table.component");
+var player_service_1 = require("./player.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,6 +23,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
         declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent, not_found_component_1.NotFoundComponent, record_component_1.RecordComponent, record_table_component_1.RecordTableComponent],
+        providers: [player_service_1.PlayerService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

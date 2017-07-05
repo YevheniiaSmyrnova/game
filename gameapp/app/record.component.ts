@@ -1,33 +1,21 @@
 import { Component } from '@angular/core';
-
-export class Player{
-    name: string;
-    record: number;
-
-    constructor(name: string, record: number) {
-        this.name = name;
-        this.record = record;
-    }
-}
+import {PlayerService} from './player.service';
+import {Player} from './player';
 
 @Component({
     selector: 'record',
     templateUrl: 'app/record.component.html'
 })
-export class RecordComponent {
-    players: Player[] =
-    [
-        { name: "Elena", record: 15.9 },
-        { name: "Omar", record: 60 },
-        { name: "Yuliia", record: 22.6 },
-        { name: "Yevheniia", record:310 }
-    ];
+export class RecordComponent implements OnInit {
 
-    addPlayer(name: string, record: number): void {
-        if(name==null || name==undefined || name.trim()=="")
-            return;
-        if(record==null || record==undefined)
-            return;
-        this.players.push(new Player(name, record));
+    players: Player[] = [];
+    constructor(private playerService: PlayerService){}
+
+    addPlayer(name: string, price: number){
+
+        this.playerService.addPlayer(name, price);
+    }
+    ngOnInit(){
+        this.players = this.playerService.getPlayers();
     }
 }
