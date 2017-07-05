@@ -3,10 +3,10 @@ import {UserService} from './user.service';
 import {User} from './user';
 
 @Component({
-    selector: 'game-app',
-    templateUrl: 'app/app.component.html'
+    selector: 'profile',
+    templateUrl: 'app/profile.component.html'
 })
-export class AppComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
     user: User{} = {};
     constructor(private userService: UserService){}

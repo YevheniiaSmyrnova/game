@@ -10,22 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var user_service_1 = require("./user.service");
-var AppComponent = (function () {
-    function AppComponent(userService) {
+var ProfileComponent = (function () {
+    function ProfileComponent(userService) {
         this.userService = userService;
         this.user = {};
     }
-    AppComponent.prototype.ngOnInit = function () {
+    ProfileComponent.prototype.ngOnInit = function () {
         this.user = this.userService.getUser();
     };
-    return AppComponent;
+    return ProfileComponent;
 }());
-AppComponent = __decorate([
+ProfileComponent = __decorate([
     core_1.Component({
-        selector: 'game-app',
-        templateUrl: 'app/app.component.html'
+        selector: 'profile',
+        templateUrl: 'app/profile.component.html'
     }),
     __metadata("design:paramtypes", [user_service_1.UserService])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ProfileComponent);
+exports.ProfileComponent = ProfileComponent;
+//# sourceMappingURL=profile.component.js.map

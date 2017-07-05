@@ -9,7 +9,8 @@ export class PlayerService {
         { name: "Yuliia", record: 22.6 },
         { name: "Yevheniia", record:310 }
     ];
-    getPlayers(): Phone[] {
+
+    getPlayers(): Player[] {
 
         return this.players;
     }

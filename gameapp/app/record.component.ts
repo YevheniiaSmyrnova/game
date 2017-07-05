@@ -12,9 +12,9 @@ export class RecordComponent implements OnInit {
     constructor(private playerService: PlayerService){}
 
     addPlayer(name: string, price: number){
-
         this.playerService.addPlayer(name, price);
     }
+
     ngOnInit(){
         this.players = this.playerService.getPlayers();
     }
