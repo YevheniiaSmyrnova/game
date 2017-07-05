@@ -9,7 +9,7 @@ export class Section{
 }
 
 @Component({
-    selector: Section = 'sidebar',
+    selector: 'sidebar',
     templateUrl: 'app/sidebar.component.html'
 })
 export class SidebarComponent {

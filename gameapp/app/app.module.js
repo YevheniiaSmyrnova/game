@@ -10,6 +10,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var sidebar_component_1 = require("./sidebar.component");
+var notfound_component_1 = require("./notfound.component");
 var record_component_1 = require("./record.component");
 var recordtable_component_1 = require("./recordtable.component");
 var AppModule = (function () {
@@ -20,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent, record_component_1.RecordComponent, recordtable_component_1.RecordTableComponent],
+        declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent, notfound_component_1.NotFoundComponent, record_component_1.RecordComponent, recordtable_component_1.RecordTableComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

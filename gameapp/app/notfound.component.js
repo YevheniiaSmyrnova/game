@@ -6,27 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var Section = (function () {
-    function Section(section) {
-        this.section = section;
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
     }
-    return Section;
+    return NotFoundComponent;
 }());
-exports.Section = Section;
-var SidebarComponent = (function () {
-    function SidebarComponent() {
-        this.section = 'myPage';
-    }
-    SidebarComponent.prototype.toggle = function (section) {
-        this.section = section;
-    };
-    return SidebarComponent;
-}());
-SidebarComponent = __decorate([
+NotFoundComponent = __decorate([
     core_1.Component({
-        selector: 'sidebar',
-        templateUrl: 'app/sidebar.component.html'
+        selector: 'not-found',
+        templateUrl: 'app/notfound.component.html'
     })
-], SidebarComponent);
-exports.SidebarComponent = SidebarComponent;
-//# sourceMappingURL=sidebar.component.js.map
+], NotFoundComponent);
+exports.NotFoundComponent = NotFoundComponent;
+//# sourceMappingURL=notfound.component.js.map

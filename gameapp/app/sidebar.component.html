@@ -1,6 +1,6 @@
 <div class="w3-container w3-margin w3-padding-64">
   <!-- Sidebar -->
-<div class="w3-sidebar w3-card-4 w3-black w3-bar-block" style="width:20%; margin-left:10%">
+<div class="w3-sidebar w3-card-4 w3-black w3-bar-block" style="width:20%; margin-left:10%; margin-right:10%">
   <input (click)="toggle('myPage')" type="button" class="w3-bar-item w3-button" value="My page">
   <input (click)="toggle('news')" type="button" class="w3-bar-item w3-button" value="News">
   <input (click)="toggle('games')" type="button" class="w3-bar-item w3-button" value="Games">
@@ -10,13 +10,13 @@
 <!-- Page Content -->
 <div style="margin-left:40%; margin-right:10%">
   <div *ngIf="section == 'myPage'">
-	<p> my page </p>
+	<not-found></not-found>
   </div>
   <div *ngIf="section == 'news'">
-	<p> news </p>
+	<not-found></not-found>
   </div>
   <div *ngIf="section == 'games'">
-	<p> games </p>
+	<not-found></not-found>
   </div>
   <div *ngIf="section == 'recordTable'">
 	<record></record>
