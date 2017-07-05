@@ -13,7 +13,7 @@ export class Section{
     templateUrl: 'app/sidebar.component.html'
 })
 export class SidebarComponent {
-    section='myPage';
+    section='profile';
 
     toggle(section: string): void {
         this.section=section;

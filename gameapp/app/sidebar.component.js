@@ -15,7 +15,7 @@ var Section = (function () {
 exports.Section = Section;
 var SidebarComponent = (function () {
     function SidebarComponent() {
-        this.section = 'myPage';
+        this.section = 'profile';
     }
     SidebarComponent.prototype.toggle = function (section) {
         this.section = section;
