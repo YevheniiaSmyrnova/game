@@ -10,13 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var user_service_1 = require("./user.service");
+var player_service_1 = require("./player.service");
 var ProfileComponent = (function () {
-    function ProfileComponent(userService) {
+    function ProfileComponent(userService, playerService) {
         this.userService = userService;
+        this.playerService = playerService;
         this.user = {};
+        this.userRecord = [];
     }
     ProfileComponent.prototype.ngOnInit = function () {
         this.user = this.userService.getUser();
+        this.userRecord = this.playerService.getUserRecord(this.user.login);
     };
     return ProfileComponent;
 }());
@@ -25,7 +29,7 @@ ProfileComponent = __decorate([
         selector: 'profile',
         templateUrl: 'app/profile.component.html'
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
+    __metadata("design:paramtypes", [user_service_1.UserService, player_service_1.PlayerService])
 ], ProfileComponent);
 exports.ProfileComponent = ProfileComponent;
 //# sourceMappingURL=profile.component.js.map

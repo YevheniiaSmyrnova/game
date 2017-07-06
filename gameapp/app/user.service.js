@@ -16,9 +16,6 @@ var UserService = (function () {
     UserService.prototype.getUser = function () {
         return this.user;
     };
-    UserService.prototype.getFullName = function () {
-        return user.firstName + " " + lastName;
-    };
     return UserService;
 }());
 exports.UserService = UserService;

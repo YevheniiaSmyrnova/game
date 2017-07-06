@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {UserService} from './user.service';
 import {User} from './user';
+import {UserService} from './user.service';
+import {PlayerService} from './player.service';
 
 @Component({
     selector: 'profile',
@@ -9,9 +10,11 @@ import {User} from './user';
 export class ProfileComponent implements OnInit {
 
     user: User{} = {};
-    constructor(private userService: UserService){}
+    userRecord = [];
+    constructor(private userService: UserService, private playerService: PlayerService){}
 
     ngOnInit(){
         this.user = this.userService.getUser();
+        this.userRecord = this.playerService.getUserRecord(this.user.login);
     }
 }

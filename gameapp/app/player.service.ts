@@ -6,7 +6,7 @@ export class PlayerService {
         { name: "Elena", record: 15.9 },
         { name: "Omar", record: 60 },
         { name: "Yuliia", record: 22.6 },
-        { name: "Yevheniia", record:310 }
+        { name: "Yevheniia1393", record:310 }
     ];
 
     getPlayers(): Player[] {
@@ -19,5 +19,15 @@ export class PlayerService {
         if(record==null || record==undefined)
             return;
         this.players.push(new Player(name, record));
+    }
+
+    getUserRecord(login: string) {
+        var userRecord = [];
+        for ( var i in this.players ) {
+            if ( this.players[i].name == login ) {
+                userRecord.push(this.players[i]);
+            }
+        }
+        return userRecord;
     }
 }

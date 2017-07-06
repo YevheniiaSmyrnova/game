@@ -17,8 +17,4 @@ export class UserService {
     getUser() {
         return this.user;
     }
-
-    getFullName() {
-        return user.firstName + " " + lastName;
-    }
 }
