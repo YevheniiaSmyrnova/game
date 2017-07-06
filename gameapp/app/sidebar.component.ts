@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
-
-export class Section{
-    section: string;
-
-    constructor(section: string) {
-        this.section = section;
-    }
-}
+import {SectionService} from './section.service';
+import {Section} from './section';
 
 @Component({
     selector: 'sidebar',
     templateUrl: 'app/sidebar.component.html'
 })
 export class SidebarComponent {
-    section='profile';
+    section: Section = "";
+    constructor(private sectionService: SectionService){}
+    ngOnInit(){
+        this.section = this.sectionService.getSection();
+    }
 
-    toggle(section: string): void {
-        this.section=section;
+    ngDoCheck(){
+        this.section = this.sectionService.getSection();
+    }
+
+    toggle(section: string) {
+        this.sectionService.toggle(section);
     }
 }

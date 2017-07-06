@@ -1,7 +1,6 @@
 import {User} from './user';
 
 export class UserService {
-
     private user: User{} =
     {
         login: "Yevheniia1393",
@@ -15,8 +14,7 @@ export class UserService {
         skype: "Zhenya1393"
     };
 
-    getUser(): User[] {
-
+    getUser() {
         return this.user;
     }
 

@@ -14,6 +14,7 @@ var profile_component_1 = require("./profile.component");
 var not_found_component_1 = require("./not-found.component");
 var record_component_1 = require("./record.component");
 var record_table_component_1 = require("./record-table.component");
+var section_service_1 = require("./section.service");
 var user_service_1 = require("./user.service");
 var player_service_1 = require("./player.service");
 var AppModule = (function () {
@@ -25,7 +26,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
         declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent, profile_component_1.ProfileComponent, not_found_component_1.NotFoundComponent, record_component_1.RecordComponent, record_table_component_1.RecordTableComponent],
-        providers: [player_service_1.PlayerService, user_service_1.UserService],
+        providers: [section_service_1.SectionService, player_service_1.PlayerService, user_service_1.UserService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

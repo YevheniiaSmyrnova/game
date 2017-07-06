@@ -1,7 +1,6 @@
 import {Player} from './player';
 
 export class PlayerService {
-
     private players: Player[] =
     [
         { name: "Elena", record: 15.9 },
@@ -11,7 +10,6 @@ export class PlayerService {
     ];
 
     getPlayers(): Player[] {
-
         return this.players;
     }
 

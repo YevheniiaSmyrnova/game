@@ -9,13 +9,14 @@ import { NotFoundComponent }   from './not-found.component';
 import { RecordComponent }   from './record.component';
 import { RecordTableComponent }   from './record-table.component';
 
+import {SectionService} from './section.service';
 import {UserService} from './user.service';
 import {PlayerService} from './player.service';
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule ],
     declarations: [ AppComponent, SidebarComponent, ProfileComponent, NotFoundComponent, RecordComponent, RecordTableComponent ],
-    providers:    [ PlayerService, UserService ],
+    providers:    [ SectionService, PlayerService, UserService ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
