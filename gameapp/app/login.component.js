@@ -12,7 +12,6 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var LoginComponent = (function () {
     function LoginComponent() {
-        this.userList = ["Yevheniia", "Elena", "Yuliia"];
         this.loginForm = new forms_1.FormGroup({
             "userName": new forms_1.FormControl("", forms_1.Validators.required),
             "password": new forms_1.FormControl("", forms_1.Validators.required)

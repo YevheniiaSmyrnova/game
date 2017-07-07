@@ -6,6 +6,7 @@ import { ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent }   from './app.component';
 import { LoginComponent }   from './login.component';
+import { RegistrationComponent }   from './registration.component';
 import { SidebarComponent }   from './sidebar.component';
 import { ProfileComponent }   from './profile.component';
 import { NotFoundComponent }   from './not-found.component';
@@ -19,7 +20,7 @@ import {PlayerService} from './player.service';
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
-    declarations: [ AppComponent, LoginComponent, SidebarComponent, ProfileComponent, NotFoundComponent, RecordComponent, RecordTableComponent ],
+    declarations: [ AppComponent, LoginComponent, RegistrationComponent, SidebarComponent, ProfileComponent, NotFoundComponent, RecordComponent, RecordTableComponent ],
     providers:    [ NavigationService, SectionService, PlayerService, UserService ],
     bootstrap:    [ AppComponent ]
 })

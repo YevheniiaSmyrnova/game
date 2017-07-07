@@ -11,6 +11,7 @@ var forms_1 = require("@angular/forms");
 var forms_2 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var login_component_1 = require("./login.component");
+var registration_component_1 = require("./registration.component");
 var sidebar_component_1 = require("./sidebar.component");
 var profile_component_1 = require("./profile.component");
 var not_found_component_1 = require("./not-found.component");
@@ -28,7 +29,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
-        declarations: [app_component_1.AppComponent, login_component_1.LoginComponent, sidebar_component_1.SidebarComponent, profile_component_1.ProfileComponent, not_found_component_1.NotFoundComponent, record_component_1.RecordComponent, record_table_component_1.RecordTableComponent],
+        declarations: [app_component_1.AppComponent, login_component_1.LoginComponent, registration_component_1.RegistrationComponent, sidebar_component_1.SidebarComponent, profile_component_1.ProfileComponent, not_found_component_1.NotFoundComponent, record_component_1.RecordComponent, record_table_component_1.RecordTableComponent],
         providers: [navigation_service_1.NavigationService, section_service_1.SectionService, player_service_1.PlayerService, user_service_1.UserService],
         bootstrap: [app_component_1.AppComponent]
     })

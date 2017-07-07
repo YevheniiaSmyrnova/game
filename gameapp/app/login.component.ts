@@ -10,11 +10,9 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class LoginComponent {
 
-    userList: string[] = ["Yevheniia", "Elena", "Yuliia"];
     loginForm : FormGroup;
     constructor(){
         this.loginForm = new FormGroup({
-
             "userName": new FormControl("", Validators.required),
             "password": new FormControl("", Validators.required)
         });
