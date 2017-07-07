@@ -14,6 +14,7 @@ var login_component_1 = require("./login.component");
 var registration_component_1 = require("./registration.component");
 var sidebar_component_1 = require("./sidebar.component");
 var profile_component_1 = require("./profile.component");
+var news_component_1 = require("./news.component");
 var games_component_1 = require("./games.component");
 var record_component_1 = require("./record.component");
 var record_table_component_1 = require("./record-table.component");
@@ -35,6 +36,7 @@ AppModule = __decorate([
             registration_component_1.RegistrationComponent,
             sidebar_component_1.SidebarComponent,
             profile_component_1.ProfileComponent,
+            news_component_1.NewsComponent,
             games_component_1.GamesComponent,
             record_component_1.RecordComponent,
             record_table_component_1.RecordTableComponent,

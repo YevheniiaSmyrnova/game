@@ -9,6 +9,7 @@ import { LoginComponent }   from './login.component';
 import { RegistrationComponent }   from './registration.component';
 import { SidebarComponent }   from './sidebar.component';
 import { ProfileComponent }   from './profile.component';
+import { NewsComponent }   from './news.component';
 import { GamesComponent }   from './games.component';
 import { RecordComponent }   from './record.component';
 import { RecordTableComponent }   from './record-table.component';
@@ -26,6 +27,7 @@ import {PlayerService} from './player.service';
                     RegistrationComponent,
                     SidebarComponent,
                     ProfileComponent,
+                    NewsComponent,
                     GamesComponent,
                     RecordComponent,
                     RecordTableComponent,
