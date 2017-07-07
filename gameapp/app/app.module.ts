@@ -9,9 +9,10 @@ import { LoginComponent }   from './login.component';
 import { RegistrationComponent }   from './registration.component';
 import { SidebarComponent }   from './sidebar.component';
 import { ProfileComponent }   from './profile.component';
-import { NotFoundComponent }   from './not-found.component';
+import { GamesComponent }   from './games.component';
 import { RecordComponent }   from './record.component';
 import { RecordTableComponent }   from './record-table.component';
+import { NotFoundComponent }   from './not-found.component';
 
 import {NavigationService} from './navigation.service';
 import {SectionService} from './section.service';
@@ -20,7 +21,15 @@ import {PlayerService} from './player.service';
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
-    declarations: [ AppComponent, LoginComponent, RegistrationComponent, SidebarComponent, ProfileComponent, NotFoundComponent, RecordComponent, RecordTableComponent ],
+    declarations: [ AppComponent,
+                    LoginComponent,
+                    RegistrationComponent,
+                    SidebarComponent,
+                    ProfileComponent,
+                    GamesComponent,
+                    RecordComponent,
+                    RecordTableComponent,
+                    NotFoundComponent ],
     providers:    [ NavigationService, SectionService, PlayerService, UserService ],
     bootstrap:    [ AppComponent ]
 })
