@@ -9,14 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var navigation_service_1 = require("./navigation.service");
 var user_service_1 = require("./user.service");
 var AppComponent = (function () {
-    function AppComponent(userService) {
+    function AppComponent(userService, navigationService) {
         this.userService = userService;
+        this.navigationService = navigationService;
         this.user = {};
+        this.navigation = "";
     }
     AppComponent.prototype.ngOnInit = function () {
         this.user = this.userService.getUser();
+        this.navigation = this.navigationService.getNavigation();
+    };
+    AppComponent.prototype.ngDoCheck = function () {
+        this.navigation = this.navigationService.getNavigation();
+    };
+    AppComponent.prototype.toggle = function (navigation) {
+        this.navigationService.toggle(navigation);
     };
     return AppComponent;
 }());
@@ -25,7 +35,7 @@ AppComponent = __decorate([
         selector: 'game-app',
         templateUrl: 'app/app.component.html'
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
+    __metadata("design:paramtypes", [user_service_1.UserService, navigation_service_1.NavigationService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

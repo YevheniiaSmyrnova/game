@@ -8,12 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var forms_2 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var login_component_1 = require("./login.component");
 var sidebar_component_1 = require("./sidebar.component");
 var profile_component_1 = require("./profile.component");
 var not_found_component_1 = require("./not-found.component");
 var record_component_1 = require("./record.component");
 var record_table_component_1 = require("./record-table.component");
+var navigation_service_1 = require("./navigation.service");
 var section_service_1 = require("./section.service");
 var user_service_1 = require("./user.service");
 var player_service_1 = require("./player.service");
@@ -24,9 +27,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent, profile_component_1.ProfileComponent, not_found_component_1.NotFoundComponent, record_component_1.RecordComponent, record_table_component_1.RecordTableComponent],
-        providers: [section_service_1.SectionService, player_service_1.PlayerService, user_service_1.UserService],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
+        declarations: [app_component_1.AppComponent, login_component_1.LoginComponent, sidebar_component_1.SidebarComponent, profile_component_1.ProfileComponent, not_found_component_1.NotFoundComponent, record_component_1.RecordComponent, record_table_component_1.RecordTableComponent],
+        providers: [navigation_service_1.NavigationService, section_service_1.SectionService, player_service_1.PlayerService, user_service_1.UserService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

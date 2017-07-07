@@ -2,12 +2,14 @@
     <thead>
     <tr class="w3-teal">
         <th>Player name</th>
+        <th>Game</th>
         <th>Record</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let player of players">
-        <td>{{player.name}}</td>
+        <td>{{player.userLogin}}</td>
+        <td>{{player.game}}</td>
         <td>{{player.record}}</td>
     </tr>
     </tbody>

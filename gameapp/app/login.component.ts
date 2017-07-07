@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+
+@Component({
+    selector: 'login',
+    templateUrl: 'app/login.component.html',
+    styles: [`
+        input.ng-touched.ng-invalid {border:solid red 2px;}
+    `],
+})
+export class LoginComponent {
+
+    userList: string[] = ["Yevheniia", "Elena", "Yuliia"];
+    loginForm : FormGroup;
+    constructor(){
+        this.loginForm = new FormGroup({
+
+            "userName": new FormControl("", Validators.required),
+            "password": new FormControl("", Validators.required)
+        });
+    }
+
+    submit(){
+        console.log(this.loginForm);
+    }
+}

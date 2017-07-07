@@ -1,7 +1,8 @@
 "use strict";
 var Player = (function () {
-    function Player(name, record) {
-        this.name = name;
+    function Player(game, userLogin, record) {
+        this.game = game;
+        this.userLogin = userLogin;
         this.record = record;
     }
     return Player;

@@ -3,28 +3,28 @@ import {Player} from './player';
 export class PlayerService {
     private players: Player[] =
     [
-        { name: "Elena", record: 15.9 },
-        { name: "Omar", record: 60 },
-        { name: "Yuliia", record: 22.6 },
-        { name: "Yevheniia1393", record:310 }
+        { game: "ball", userLogin: "Elena", record: 15.9 },
+        { game: "card", userLogin: "Omar", record: 60 },
+        { game: "ball", userLogin: "Yuliia", record: 22.6 },
+        { game: "card", userLogin: "Yevheniia1393", record:310 }
     ];
 
     getPlayers(): Player[] {
         return this.players;
     }
 
-    addPlayer(name: string, record: number) {
-        if(name==null || name==undefined || name.trim()=="")
+    addPlayer(game: string, userLogin: string, record: number) {
+        if(!userLogin)
             return;
-        if(record==null || record==undefined)
+        if(!record)
             return;
-        this.players.push(new Player(name, record));
+        this.players.push(new Player(game, userLogin, record));
     }
 
     getUserRecord(login: string) {
         var userRecord = [];
         for ( var i in this.players ) {
-            if ( this.players[i].name == login ) {
+            if ( this.players[i].userLogin == login ) {
                 userRecord.push(this.players[i]);
             }
         }

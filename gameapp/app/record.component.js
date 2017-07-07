@@ -10,13 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var player_service_1 = require("./player.service");
+var player_1 = require("./player");
 var RecordComponent = (function () {
     function RecordComponent(playerService) {
         this.playerService = playerService;
+        this.player = new player_1.Player("", "", 0);
         this.players = [];
+        this.games = ["Card", "Ball", "Some"];
     }
-    RecordComponent.prototype.addPlayer = function (name, price) {
-        this.playerService.addPlayer(name, price);
+    RecordComponent.prototype.addPlayer = function () {
+        this.playerService.addPlayer(this.player.game, this.player.userLogin, this.player.record);
     };
     RecordComponent.prototype.ngOnInit = function () {
         this.players = this.playerService.getPlayers();

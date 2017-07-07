@@ -8,11 +8,13 @@ import {Player} from './player';
 })
 export class RecordComponent implements OnInit {
 
+    player: Player = new Player("", "", 0);
     players: Player[] = [];
+    games: string[] = ["Card", "Ball", "Some"];
     constructor(private playerService: PlayerService){}
 
-    addPlayer(name: string, price: number){
-        this.playerService.addPlayer(name, price);
+    addPlayer(){
+        this.playerService.addPlayer(this.player.game, this.player.userLogin, this.player.record);
     }
 
     ngOnInit(){
