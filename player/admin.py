@@ -16,7 +16,7 @@ class PlayerAdmin(admin.ModelAdmin):
          {'fields': ['user',
                      'date_of_birth', 'gender']}),
         (u'Контактная информация',
-         {'fields': ['email', 'phone', 'address', 'skype']}),
+         {'fields': ['email', 'phone', 'city', 'skype']}),
     ]
     list_display = ('user_full_name', 'email', 'skype')
 

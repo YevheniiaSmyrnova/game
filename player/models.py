@@ -12,14 +12,14 @@ class Player(models.Model):
     """
     Player model
     """
-    user = models.OneToOneField(User, verbose_name=u'Пользователь')
-    date_of_birth = models.DateField(u'День Рождения')
-    gender = models.CharField(u'Пол',
-                              choices=(('M', u'Мужской'), ('F', u'Женский')),
+    user = models.OneToOneField(User, verbose_name='User')
+    date_of_birth = models.DateField('Date of birth')
+    gender = models.CharField('Gender',
+                              choices=(('M', 'Male'), ('F', 'Female')),
                               max_length=15)
     email = models.EmailField('Email')
-    phone = models.CharField(u'Телефон', max_length=15, null=True, blank=True)
-    address = models.CharField(u'Адрес', max_length=55, null=True, blank=True)
+    phone = models.CharField('Phone', max_length=15, null=True, blank=True)
+    city = models.CharField('City', max_length=55, null=True, blank=True)
     skype = models.CharField('Skype', max_length=55, null=True, blank=True)
 
     def __unicode__(self):
