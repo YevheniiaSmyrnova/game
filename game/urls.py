@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.contrib.auth.views import login, logout
 
 from game.views import IndexView, NotFoundView, RegisterCreateView
+from rest_framework_swagger.views import get_swagger_view
 
 
+schema_view = get_swagger_view(title='API', url='/')
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^api/', include('player.api.urls', namespace="player_api_urls")),
+    url(r'^api/', include('record.api.urls', namespace="record_api_urls")),
+    url(r'^swagger/', schema_view),
     url(r'^register/$', RegisterCreateView.as_view(), name='register'),
     url(r'^login/$', login, {"template_name": "login.html"}, name='login'),
     url(r'^logout/$', logout, {"template_name": "logout.html"}, name='logout'),
