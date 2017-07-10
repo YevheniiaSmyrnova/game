@@ -6,7 +6,7 @@
                 <div class="form-inline">
                     <div class="form-group">
                         <div class="col-md-8">
-                            <input class="form-control" [(ngModel)]="player.userLogin" placeholder="Player name" #userLogin="ngModel" required />
+                            <input class="form-control" [(ngModel)]="player.player" placeholder="Player name" #player="ngModel" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -25,11 +25,11 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-8">
-                            <button [disabled]="userLogin.invalid || game.invalid" class="btn btn-default" (click)="addPlayer()">Add</button>
+                            <button [disabled]="player.invalid || game.invalid" class="btn btn-default" (click)="addPlayer()">Add</button>
                         </div>
                     </div>
                 </div>
-                <div [hidden]="userLogin.valid || userLogin.untouched" class="alert alert-danger">
+                <div [hidden]="player.valid || player.untouched" class="alert alert-danger">
                     Please enter your login
                 </div>
                 <div [hidden]="game.valid || game.untouched" class="alert alert-danger">

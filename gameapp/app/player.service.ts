@@ -1,30 +1,30 @@
 import {Player} from './player';
 
-export class PlayerService {
+export class PlayerService implements OnInit {
     private players: Player[] =
     [
-        { game: "ball", userLogin: "Elena", record: 15.9 },
-        { game: "card", userLogin: "Omar", record: 60 },
-        { game: "ball", userLogin: "Yuliia", record: 22.6 },
-        { game: "card", userLogin: "Yevheniia1393", record:310 }
+        { game: "ball", player: "Elena", record: 15.9 },
+        { game: "card", player: "Omar", record: 60 },
+        { game: "ball", player: "Yuliia", record: 22.6 },
+        { game: "card", player: "Yevheniia1393", record:310 }
     ];
 
     getPlayers(): Player[] {
         return this.players;
     }
 
-    addPlayer(game: string, userLogin: string, record: number) {
-        if(!userLogin)
+    addPlayer(game: string, player: string, record: number) {
+        if(!player)
             return;
         if(!record)
             return;
-        this.players.push(new Player(game, userLogin, record));
+        this.players.push(new Player(game, player, record));
     }
 
     getUserRecord(login: string) {
         var userRecord = [];
         for ( var i in this.players ) {
-            if ( this.players[i].userLogin == login ) {
+            if ( this.players[i].player == login ) {
                 userRecord.push(this.players[i]);
             }
         }

@@ -10,19 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var player_service_1 = require("./player.service");
+var http_service_1 = require("./http.service");
 var player_1 = require("./player");
 var RecordComponent = (function () {
-    function RecordComponent(playerService) {
+    function RecordComponent(playerService, httpService) {
         this.playerService = playerService;
+        this.httpService = httpService;
         this.player = new player_1.Player("", "", 0);
         this.players = [];
         this.games = ["Card", "Ball", "Some"];
     }
     RecordComponent.prototype.addPlayer = function () {
-        this.playerService.addPlayer(this.player.game, this.player.userLogin, this.player.record);
+        this.playerService.addPlayer(this.player.game, this.player.player, this.player.record);
     };
     RecordComponent.prototype.ngOnInit = function () {
-        this.players = this.playerService.getPlayers();
+        var _this = this;
+        this.httpService.getData()
+            .subscribe(function (data) { return _this.players = data.json(); });
     };
     return RecordComponent;
 }());
@@ -31,7 +35,7 @@ RecordComponent = __decorate([
         selector: 'record',
         templateUrl: 'app/record.component.html'
     }),
-    __metadata("design:paramtypes", [player_service_1.PlayerService])
+    __metadata("design:paramtypes", [player_service_1.PlayerService, http_service_1.HttpService])
 ], RecordComponent);
 exports.RecordComponent = RecordComponent;
 //# sourceMappingURL=record.component.js.map

@@ -2,7 +2,7 @@
     "name": "gameapp",
     "version": "1.0.0",
     "scripts": {
-        "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+        "start": "concurrent \"npm run tsc:w\" \"npm run lite --proxy-config proxy.config.json\" ",
         "lite": "lite-server",
         "tsc": "tsc",
         "tsc:w": "tsc -w"
