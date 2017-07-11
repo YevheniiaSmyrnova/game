@@ -19,7 +19,7 @@ import { NavigationService }     from './navigation.service';
 import { SectionService }        from './section.service';
 import { HttpService }           from './http.service';
 import { UserService }           from './user.service';
-import { PlayerService }         from './player.service';
+import { RecordService }         from './record.service';
 
 @NgModule({
     imports:      [ BrowserModule,
@@ -39,7 +39,7 @@ import { PlayerService }         from './player.service';
     providers:    [ NavigationService,
                     SectionService,
                     HttpService,
-                    PlayerService,
+                    RecordService,
                     UserService ],
     bootstrap:    [ AppComponent ]
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User }              from './user';
 import { UserService }       from './user.service';
-import { PlayerService }     from './player.service';
+import { RecordService }     from './record.service';
 
 @Component({
     selector: 'profile',
@@ -12,15 +12,15 @@ export class ProfileComponent implements OnInit {
     public user: User;
     public userRecord = [];
     private userService: any;
-    private playerService: any;
+    private recordService: any;
 
-    constructor(userService: UserService, playerService: PlayerService){
+    constructor(userService: UserService, recordService: RecordService){
         this.userService = userService;
-        this.playerService = playerService;
+        this.recordService = recordService;
     };
 
     ngOnInit(){
         this.user = this.userService.getUser();
-        this.userRecord = this.playerService.getUserRecord(this.user.login);
+        this.userRecord = this.recordService.getUserRecord(this.user.login);
     }
 }

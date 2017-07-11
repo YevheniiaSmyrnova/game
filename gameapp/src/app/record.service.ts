@@ -1,7 +1,7 @@
-import { Player } from './player';
+import { Record } from './record';
 
-export class PlayerService {
-    private players: Player[] =
+export class RecordService {
+    private records: Record[] =
     [
         { game: "ball", player: "Elena", record: 15.9 },
         { game: "card", player: "Omar", record: 60 },
@@ -9,23 +9,23 @@ export class PlayerService {
         { game: "card", player: "Yevheniia1393", record:310 }
     ];
 
-    getPlayers(): Player[] {
-        return this.players;
+    getRecords(): Record[] {
+        return this.records;
     }
 
-    addPlayer(game: string, player: string, record: number) {
+    addRecord(game: string, player: string, record: number) {
         if(!player)
             return;
         if(!record)
             return;
-        this.players.push(new Player(game, player, record));
+        this.records.push(new Record(game, player, record));
     }
 
     getUserRecord(login: string) {
         var userRecord = [];
-        for ( var i in this.players ) {
-            if ( this.players[i].player == login ) {
-                userRecord.push(this.players[i]);
+        for ( var i in this.records ) {
+            if ( this.records[i].player == login ) {
+                userRecord.push(this.records[i]);
             }
         }
         return userRecord;

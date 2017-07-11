@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerService }     from './player.service';
+import { RecordService }     from './record.service';
 import { HttpService }       from './http.service';
-import { Player }            from './player';
+import { Record }            from './record';
 
 @Component({
     selector: 'record',
@@ -9,23 +9,23 @@ import { Player }            from './player';
 })
 export class RecordComponent implements OnInit {
 
-    player: Player = new Player("", "", 0);
-    players: Player[];
+    record: Record = new Record("", "", 0);
+    records: Record[];
     games: string[] = ["Card", "Ball", "Some"];
-    private playerService: any;
+    private recordService: any;
     private httpService: any;
 
-    constructor(playerService: PlayerService, httpService: HttpService){
-        this.playerService = playerService;
+    constructor(recordService: RecordService, httpService: HttpService){
+        this.recordService = recordService;
         this.httpService = httpService;
     };
 
-    addPlayer(){
-        this.playerService.addPlayer(this.player.game, this.player.player, this.player.record);
+    addRecord(){
+        this.recordService.addRecord(this.record.game, this.record.player, this.record.record);
     }
 
     ngOnInit(){
-        this.players = this.playerService.getPlayers();
+        this.records = this.recordService.getRecords();
 
     }
 }
