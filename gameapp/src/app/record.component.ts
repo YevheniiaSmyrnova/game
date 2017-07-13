@@ -10,7 +10,7 @@ import { Record }            from './record';
 export class RecordComponent implements OnInit {
 
     record: Record = new Record("", "", 0);
-    records: Record[];
+    records: any;
     games: string[] = ["Card", "Ball", "Some"];
     private recordService: any;
     private httpService: any;
@@ -25,7 +25,7 @@ export class RecordComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.records = this.recordService.getRecords();
-
+        this.httpService.getData()
+                        .subscribe((data: Response) => this.records=data.json());
     }
 }
