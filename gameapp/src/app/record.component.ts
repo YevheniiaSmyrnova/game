@@ -14,6 +14,7 @@ export class RecordComponent implements OnInit {
     games: string[] = ["Card", "Ball", "Some"];
     private recordService: any;
     private httpService: any;
+    error:any;
 
     constructor(recordService: RecordService, httpService: HttpService){
         this.recordService = recordService;
@@ -26,6 +27,8 @@ export class RecordComponent implements OnInit {
 
     ngOnInit(){
         this.httpService.getData()
-                        .subscribe((data: Response) => this.records=data.json());
+                        .subscribe((data: Response) => this.records=data.json(),
+                            (error:Response) => {this.error = error; console.log(error);}
+                        );
     }
 }

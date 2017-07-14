@@ -1,7 +1,6 @@
-{"proxy": {
-   "/api/*": {
-      "target": "http://localhost:9000",
-      "secure": false
-   }
-}}
-
+{
+    "/api": {
+    "target": "http://django:9000",
+    "secure": false
+}
+}
