@@ -3,6 +3,7 @@ import { BrowserModule }          from '@angular/platform-browser';
 import { FormsModule }            from '@angular/forms';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpModule,JsonpModule } from '@angular/http';
+import { OrderModule }            from 'ngx-order-pipe';
 
 import { AppComponent }           from './app.component';
 import { LoginComponent }         from './login.component';
@@ -25,7 +26,8 @@ import { RecordService }          from './record.service';
                     FormsModule,
                     ReactiveFormsModule,
                     HttpModule,
-                    JsonpModule ],
+                    JsonpModule,
+                    OrderModule ],
     declarations: [ AppComponent,
                     LoginComponent,
                     RegistrationComponent,

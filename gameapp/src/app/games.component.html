@@ -1,40 +1,15 @@
-<div class="w3-row-padding">
-    <div class="w3-third">
-        <div class="w3-white w3-text-grey w3-card-4">
-            <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
-            <input type="button" class=" w3-button w3-large w3-text-teal w3-hover-teal" style="width:100%" value="Game 1">
-        </div>
+<div class="w3-row-padding w3-margin-left">
+  <div *ngFor="let game of games">
+    <div class="w3-third w3-padding-16">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow w3-white w3-text-grey" style="width:90%">
+        <li class="w3-xlarge w3-padding-16">
+          <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
+        </li>
+        <li class="w3-padding-16"><h3><b>{{game}}</b></h3></li>
+        <li class="w3-padding-16 w3-hover-teal">
+          <input type="button" class=" w3-button w3-xlarge w3-text-teal w3-hover-teal" style="width:100%" value="Play">
+        </li>
+      </ul>
     </div>
-    <div class="w3-third">
-        <div class="w3-white w3-text-grey w3-card-4">
-            <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
-            <input type="button" class=" w3-button w3-large w3-text-teal w3-hover-teal" style="width:100%" value="Game 2">
-        </div>
-    </div>
-    <div class="w3-third">
-        <div class="w3-white w3-text-grey w3-card-4">
-            <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
-            <input type="button" class=" w3-button w3-large w3-text-teal w3-hover-teal" style="width:100%" value="Game 3">
-        </div>
-    </div>
-</div>
-<div class="w3-row-padding w3-margin-top">
-    <div class="w3-third">
-        <div class="w3-white w3-text-grey w3-card-4">
-            <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
-            <input type="button" class=" w3-button w3-large w3-text-teal w3-hover-teal" style="width:100%" value="Game 4">
-        </div>
-    </div>
-    <div class="w3-third">
-        <div class="w3-white w3-text-grey w3-card-4">
-            <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
-            <input type="button" class=" w3-button w3-large w3-text-teal w3-hover-teal" style="width:100%" value="Game 5">
-        </div>
-    </div>
-    <div class="w3-third">
-        <div class="w3-white w3-text-grey w3-card-4">
-            <img src="/assets/img/user_yevheniia.jpg" style="width:100%">
-            <input type="button" class=" w3-button w3-large w3-text-teal w3-hover-teal" style="width:100%" value="Game 6">
-        </div>
-    </div>
+  </div>
 </div>

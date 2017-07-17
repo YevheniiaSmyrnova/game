@@ -6,4 +6,9 @@ import { Input, Component } from '@angular/core';
 })
 export class RecordTableComponent {
     @Input() records;
+    reverse: boolean = false;
+
+    toggle(): any {
+        this.reverse = !this.reverse;
+    }
 }
