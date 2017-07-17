@@ -10,9 +10,10 @@ import { RecordService }     from './record.service';
 export class ProfileComponent implements OnInit {
 
     public user: User;
-    public userRecord = [];
+    public userRecord: any;
     private userService: any;
     private recordService: any;
+    error:any;
 
     constructor(userService: UserService, recordService: RecordService){
         this.userService = userService;
@@ -21,6 +22,9 @@ export class ProfileComponent implements OnInit {
 
     ngOnInit(){
         this.user = this.userService.getUser();
-        this.userRecord = this.recordService.getUserRecord(this.user.login);
+        this.recordService.getUserRecord(this.user.id)
+                        .subscribe((data: Response) => this.userRecord=data.json(),
+                            (error:Response) => {this.error = error; console.log(error);}
+                        );
     }
 }

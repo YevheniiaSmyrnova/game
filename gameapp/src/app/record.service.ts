@@ -1,33 +1,28 @@
-import { Record } from './record';
+import { Injectable }             from '@angular/core';
+import { Http, Response, Headers} from '@angular/http';
+import { Record }                 from './record';
 
-export class RecordService {
-    private records: Record[] =
-    [
-        { game: "ball", player: "Elena", record: 15.9 },
-        { game: "card", player: "Omar", record: 60 },
-        { game: "ball", player: "Yuliia", record: 22.6 },
-        { game: "card", player: "Yevheniia1393", record:310 }
-    ];
+import { Observable }             from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+import 'rxjs/Rx';
 
-    getRecords(): Record[] {
-        return this.records;
+@Injectable()
+export class RecordService{
+
+    private recordsUrl = '/api/records/';
+    private userRecordsUrl = '/api/records/?player=';
+    private gameRecordsUrl = '/api/records/?game=';
+
+    constructor(private http: Http){ }
+
+    getRecord(){
+        return this.http.get(this.recordsUrl)
+                    .catch((error: any)=> { return Observable.throw(error);});
     }
 
-    addRecord(game: string, player: string, record: number) {
-        if(!player)
-            return;
-        if(!record)
-            return;
-        this.records.push(new Record(game, player, record));
-    }
-
-    getUserRecord(login: string) {
-        var userRecord = [];
-        for ( var i in this.records ) {
-            if ( this.records[i].player == login ) {
-                userRecord.push(this.records[i]);
-            }
-        }
-        return userRecord;
+    getUserRecord(id: string) {
+        return this.http.get(this.userRecordsUrl + id)
+                    .catch((error: any)=> { return Observable.throw(error);});
     }
 }

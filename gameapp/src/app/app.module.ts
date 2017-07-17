@@ -17,7 +17,6 @@ import { NotFoundComponent }      from './not-found.component';
 
 import { NavigationService }      from './navigation.service';
 import { SectionService }         from './section.service';
-import { HttpService }            from './http.service';
 import { UserService }            from './user.service';
 import { RecordService }          from './record.service';
 
@@ -39,7 +38,6 @@ import { RecordService }          from './record.service';
                     NotFoundComponent ],
     providers:    [ NavigationService,
                     SectionService,
-                    HttpService,
                     RecordService,
                     UserService ],
     bootstrap:    [ AppComponent ]

@@ -1,7 +1,7 @@
 import { User } from './user';
 
 export class UserService {
-    private user: User = new User(
+    private user: User = new User( "1",
         "Yevheniia1393",
         "Yevheniia",
         "Smyrnova",
