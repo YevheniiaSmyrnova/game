@@ -11,7 +11,7 @@ export class RecordComponent implements OnInit {
     record: Record = new Record("", "", 0);
     records: any;
     private recordService: any;
-    error:any;
+    error: any;
 
     constructor(recordService: RecordService){
         this.recordService = recordService;
@@ -22,5 +22,19 @@ export class RecordComponent implements OnInit {
                         .subscribe((data: Response) => this.records=data.json(),
                             (error:Response) => {this.error = error; console.log(error);}
                         );
+    }
+
+    toggle(game: string) {
+        if (game == "all" ) {
+            this.recordService.getRecord()
+                        .subscribe((data: Response) => this.records=data.json(),
+                            (error:Response) => {this.error = error; console.log(error);}
+                        );
+        } else {
+            this.recordService.getGameRecord(game)
+                        .subscribe((data: Response) => this.records=data.json(),
+                            (error:Response) => {this.error = error; console.log(error);}
+                        );
+        }
     }
 }

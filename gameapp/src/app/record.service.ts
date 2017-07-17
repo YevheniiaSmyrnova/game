@@ -25,4 +25,9 @@ export class RecordService{
         return this.http.get(this.userRecordsUrl + id)
                     .catch((error: any)=> { return Observable.throw(error);});
     }
+
+    getGameRecord(game: string) {
+        return this.http.get(this.gameRecordsUrl + game)
+                    .catch((error: any)=> { return Observable.throw(error);});
+    }
 }

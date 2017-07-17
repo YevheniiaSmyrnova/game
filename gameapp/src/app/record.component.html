@@ -5,13 +5,13 @@
             <div class="w3-container">
                 <div class="w3-row-padding">
                     <div class="w3-third">
-                        <input type="button" class=" w3-button w3-large w3-teal w3-hover-white" style="width:100%" value="All">
+                        <input (click)="toggle('all')" type="button" class=" w3-button w3-large w3-teal w3-hover-white" style="width:100%" value="All">
                     </div>
                     <div class="w3-third">
-                        <input type="button" class=" w3-button w3-large w3-teal w3-hover-white" style="width:100%" value="Gallows">
+                        <input (click)="toggle('gallows')" type="button" class=" w3-button w3-large w3-teal w3-hover-white" style="width:100%" value="Gallows">
                     </div>
                     <div class="w3-third">
-                        <input type="button" class=" w3-button w3-large w3-teal w3-hover-white" style="width:100%" value="Tic-Tac-Toe">
+                        <input (click)="toggle('tic-tac-toe')" type="button" class=" w3-button w3-large w3-teal w3-hover-white" style="width:100%" value="Tic-Tac-Toe">
                     </div>
             </div>
             <hr>
