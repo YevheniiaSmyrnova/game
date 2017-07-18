@@ -25,14 +25,3 @@ class PlayerRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     """
     queryset = Player.objects.all()
     serializer_class = PlayerSerializer
-
-    def put(self, request, *args, **kwargs):
-        instance = self.get_object()
-        serializer = self.serializer_class(
-            instance=instance, data=request.data, partial=True)
-        if not serializer.is_valid():
-            return Response(data=serializer.errors,
-                            status=HTTP_400_BAD_REQUEST)
-        instance = serializer.save()
-        response = PlayerSerializer(instance=instance).data
-        return Response(status=HTTP_200_OK, data=response)
