@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^api/', include('player.api.urls', namespace="player_api_urls")),
     url(r'^api/', include('record.api.urls', namespace="record_api_urls")),
+    url(r'^api/', include('news.api.urls', namespace="news_api_urls")),
     url(r'^swagger/', schema_view),
     url(r'^register/$', RegisterCreateView.as_view(), name='register'),
     url(r'^login/$', login, {"template_name": "login.html"}, name='login'),

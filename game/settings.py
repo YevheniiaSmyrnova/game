@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = []
 PROJECT_APPS = [
     'player',
     'record',
+    'news',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + PROJECT_APPS + THIRD_PARTY_APPS
