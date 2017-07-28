@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Navigation }        from './navigation';
-import { User }              from './user';
+import { User }              from './profile/user';
 
 import { NavigationService } from './navigation.service';
-import { UserService }       from './user.service';
+import { UserService }       from './profile/user.service';
 
 @Component({
     selector: 'game-app',

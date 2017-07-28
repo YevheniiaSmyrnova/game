@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User }              from './user';
 import { UserService }       from './user.service';
-import { RecordService }     from './record.service';
+import { RecordService }     from '../records/record.service';
 
 @Component({
     selector: 'profile',
