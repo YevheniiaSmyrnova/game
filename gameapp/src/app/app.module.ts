@@ -19,6 +19,7 @@ import { NotFoundComponent }      from './not-found.component';
 import { NavigationService }      from './navigation.service';
 import { SectionService }         from './section.service';
 import { UserService }            from './user.service';
+import { NewsService }            from './news.service';
 import { RecordService }          from './record.service';
 
 @NgModule({
@@ -40,8 +41,9 @@ import { RecordService }          from './record.service';
                     NotFoundComponent ],
     providers:    [ NavigationService,
                     SectionService,
-                    RecordService,
-                    UserService ],
+                    UserService,
+                    NewsService,
+                    RecordService ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -15,7 +15,7 @@ class NewsSerializer(serializers.ModelSerializer):
         Meta params
         """
         model = News
-        fields = ['news_title', 'news_text', 'news_date', 'news_like']
+        fields = ['id', 'news_title', 'news_text', 'news_date', 'news_like']
 
 
 class CommentSerializer(serializers.ModelSerializer):

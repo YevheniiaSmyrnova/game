@@ -8,7 +8,6 @@ import { Record }            from './record';
 })
 export class RecordComponent implements OnInit {
 
-    record: Record = new Record("", "", 0);
     records: any;
     private recordService: any;
     error: any;
