@@ -1,18 +1,18 @@
 <table class="w3-table w3-striped w3-border">
-    <thead>
-    <tr class="w3-teal">
-        <th>Player name</th>
-        <th>Game</th>
-        <th (click)="toggle()">Record
-          <span *ngIf="!reverse" class="fa fa-caret-down"></span>
-          <span *ngIf="reverse" class="fa fa-caret-up"></span></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let record of records | orderBy: 'record': reverse">
-        <td>{{record.player}}</td>
-        <td>{{record.game}}</td>
-        <td>{{record.record}}</td>
-    </tr>
-    </tbody>
+  <thead>
+  <tr class="w3-teal">
+    <th>Player name</th>
+    <th>Game</th>
+    <th (click)="toggle()">Record
+      <span *ngIf="!reverse" class="fa fa-caret-down"></span>
+      <span *ngIf="reverse" class="fa fa-caret-up"></span></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let record of records | orderBy: 'record': reverse">
+    <td>{{record.player}}</td>
+    <td>{{record.game}}</td>
+    <td>{{record.record}}</td>
+  </tr>
+  </tbody>
 </table>

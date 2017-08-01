@@ -10,24 +10,24 @@ import 'rxjs/Rx';
 @Injectable()
 export class RecordService{
 
-    private recordsUrl = '/api/records/';
-    private userRecordsUrl = '/api/records/?player=';
-    private gameRecordsUrl = '/api/records/?game=';
+  private recordsUrl = '/api/records/';
+  private userRecordsUrl = '/api/records/?player=';
+  private gameRecordsUrl = '/api/records/?game=';
 
-    constructor(private http: Http){ }
+  constructor(private http: Http){ }
 
-    getRecord(){
-        return this.http.get(this.recordsUrl)
-                    .catch((error: any)=> { return Observable.throw(error);});
-    }
+  getRecord(){
+    return this.http.get(this.recordsUrl)
+                .catch((error: any)=> { return Observable.throw(error);});
+  }
 
-    getUserRecord(id: string) {
-        return this.http.get(this.userRecordsUrl + id)
-                    .catch((error: any)=> { return Observable.throw(error);});
-    }
+  getUserRecord(id: string) {
+    return this.http.get(this.userRecordsUrl + id)
+                .catch((error: any)=> { return Observable.throw(error);});
+  }
 
-    getGameRecord(game: string) {
-        return this.http.get(this.gameRecordsUrl + game)
-                    .catch((error: any)=> { return Observable.throw(error);});
-    }
+  getGameRecord(game: string) {
+    return this.http.get(this.gameRecordsUrl + game)
+                .catch((error: any)=> { return Observable.throw(error);});
+  }
 }
