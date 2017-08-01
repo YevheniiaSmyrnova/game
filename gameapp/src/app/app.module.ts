@@ -23,14 +23,23 @@ import { UserService }            from './profile/user.service';
 import { NewsService }            from './news/news.service';
 import { RecordService }          from './records/record.service';
 
+import { GamesGuard }             from './games/games.guard';
+
+const sideBarRoutes: Routes =[
+    { path: '', component: ProfileComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'news', component: NewsComponent },
+    { path: 'news/detail/:id', component: NewsDetailComponent },
+    { path: 'games', component: GamesComponent, canActivate: [GamesGuard] },
+    { path: 'records', component: RecordComponent }
+];
+
 const appRoutes: Routes =[
-    { path: '', component: ProfileComponent},
-    { path: 'profile', component: ProfileComponent},
-    { path: 'news', component: NewsComponent},
-    { path: 'news/detail/:id', component: NewsDetailComponent},
-    { path: 'games', component: GamesComponent},
-    { path: 'records', component: RecordComponent},
-    { path: '**', component: NotFoundComponent}
+    { path: '', component: ProfileComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegistrationComponent },
+    { path: '', component: SidebarComponent, children: sideBarRoutes },
+    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -55,7 +64,8 @@ const appRoutes: Routes =[
     providers:    [ NavigationService,
                     UserService,
                     NewsService,
-                    RecordService ],
+                    RecordService,
+                    GamesGuard ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
