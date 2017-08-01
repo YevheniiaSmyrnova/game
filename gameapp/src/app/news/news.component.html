@@ -8,10 +8,10 @@
         <br>
         <hr class="w3-clear">
         <p>{{ news.news_text }}</p>
-        <button (click)="addLike(news.id, news.news_like)" type="button" class="w3-button w3-theme-d1 w3-margin-bottom w3-text-teal"><i
+        <button (click)="addNewsLike(news.id, news.news_like)" type="button" class="w3-button w3-theme-d1 w3-margin-bottom w3-text-teal"><i
           class="fa fa-thumbs-up fa-fw w3-xlarge w3-text-teal"></i>  {{ news.news_like }}
         </button>
-        <button (click)="getNewsComment(news.id)" type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-text-teal"><i
+        <button  [routerLink]="['detail', news.id]" type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-text-teal"><i
           class="fa fa-comment fa-fw w3-xlarge w3-text-teal"></i>  Comment
         </button>
       </div>

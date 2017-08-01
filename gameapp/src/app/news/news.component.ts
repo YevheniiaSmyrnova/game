@@ -8,8 +8,7 @@ import { News }              from './news';
 })
 export class NewsComponent implements OnInit {
 
-  news: any;
-  comments: any;
+  private news: any;
   private newsService: any;
   error: any;
 
@@ -22,24 +21,20 @@ export class NewsComponent implements OnInit {
                     .subscribe((data: Response) => this.news=data.json(),
                                (error:Response) => {this.error = error; console.log(error);}
                     );
-                    console.log("ngOnInit");
   }
 
-  getNewsComment(id: string) {
-    this.newsService.getNewsComment(id)
-                    .subscribe((data: Response) => this.comments=data.json(),
-                               (error:Response) => {this.error = error; console.log(error);}
-                    );
-    console.log(this.comments);
-  }
-
-  addLike(id: string, like: string) {
+  addNewsLike(id: string, like: string) {
     var new_like = Number (like) + 1;
     this.newsService.patchNewsLike(id, new_like)
-                    .subscribe((data: Response) => this.comments=data.json(),
+                    .subscribe((data: Response) => {
+                                  let newNews = data.json();
+                                  for(let index in this.news) {
+                                    if (this.news[index].id == id) {
+                                      this.news[index] = newNews;
+                                    }
+                                  }
+                                },
                                (error:Response) => {this.error = error; console.log(error);}
                     );
-    console.log(new_like);
-    this.ngOnInit();
   }
 }

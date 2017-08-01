@@ -12,6 +12,7 @@ import { RegistrationComponent }  from './registration/registration.component';
 import { SidebarComponent }       from './sidebar/sidebar.component';
 import { ProfileComponent }       from './profile/profile.component';
 import { NewsComponent }          from './news/news.component';
+import { NewsDetailComponent }          from './news/news-detail.component';
 import { GamesComponent }         from './games/games.component';
 import { RecordComponent }        from './records/record.component';
 import { RecordTableComponent }   from './records/record-table.component';
@@ -26,9 +27,10 @@ const appRoutes: Routes =[
     { path: '', component: ProfileComponent},
     { path: 'profile', component: ProfileComponent},
     { path: 'news', component: NewsComponent},
+    { path: 'news/detail/:id', component: NewsDetailComponent},
     { path: 'games', component: GamesComponent},
     { path: 'records', component: RecordComponent},
-    { path: '**', redirectTo: '/'}
+    { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -45,6 +47,7 @@ const appRoutes: Routes =[
                     SidebarComponent,
                     ProfileComponent,
                     NewsComponent,
+                    NewsDetailComponent,
                     GamesComponent,
                     RecordComponent,
                     RecordTableComponent,

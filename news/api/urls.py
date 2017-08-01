@@ -4,7 +4,8 @@ News api urls module
 from django.conf.urls import url
 from news.api.views import NewsListCreateAPIView, \
     NewsRetrieveUpdateDestroyAPIView, \
-    CommentListCreateAPIView
+    CommentListCreateAPIView, \
+    CommentRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
     url(r'^news/$', NewsListCreateAPIView.as_view(),
@@ -13,4 +14,6 @@ urlpatterns = [
         name='news_detail'),
     url(r'^news/(?P<pk>\d+)/comment/$', CommentListCreateAPIView.as_view(),
         name='comments_list'),
+    url(r'^comment/(?P<pk>\d+)/$', CommentRetrieveUpdateDestroyAPIView.as_view(),
+        name='comment_detail'),
 ]

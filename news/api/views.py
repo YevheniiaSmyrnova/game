@@ -43,3 +43,11 @@ class CommentListCreateAPIView(ListCreateAPIView):
         """
         return Comment.objects.filter(
             news = self.kwargs.get(self.lookup_field))
+
+
+class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, Update and Destroy Comment.
+    """
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer

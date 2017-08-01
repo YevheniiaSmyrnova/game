@@ -11,7 +11,8 @@ import 'rxjs/Rx';
 export class NewsService{
 
   private newsUrl = '/api/news/';
-  private commentUrl = '/comment/';
+  private commentListUrl = '/comment/';
+  private commentUrl = '/api/comment/';
   headers: Headers;
   options: RequestOptions;
 
@@ -21,21 +22,36 @@ export class NewsService{
     this.options = new RequestOptions({ headers: this.headers });
   }
 
-  getNews() {
-    return this.http.get(this.newsUrl)
-                .catch((error: any)=> { return Observable.throw(error);});
+  getNews(id: string) {
+    let url: string;
+    if (id) {
+      url = this.newsUrl + id + '/';
+    } else {
+      url = this.newsUrl;
+    }
+    return this.http.get(url)
+                    .catch((error: any)=> { return Observable.throw(error);});
   }
 
   getNewsComment(id: string) {
-    console.log(this.newsUrl + id + this.commentUrl);
-    return this.http.get(this.newsUrl + id + this.commentUrl)
-                .catch((error: any)=> { return Observable.throw(error);});
+    let url = this.newsUrl + id + this.commentListUrl;
+    return this.http.get(url)
+                    .catch((error: any)=> { return Observable.throw(error);});
   }
 
   patchNewsLike(id: string, like: number) {
+    let url = this.newsUrl + id + '/';
     let obj = { 'id': id, 'news_like': like };
     let body = JSON.stringify(obj);
-    return this.http.patch(this.newsUrl + id + '/', body, this.options)
-                .catch((error: any)=> { return Observable.throw(error);});
+    return this.http.patch(url, body, this.options)
+                    .catch((error: any)=> { return Observable.throw(error);});
+  }
+
+  patchCommentLike(id: string, like: number) {
+    let url = this.commentUrl + id + '/';
+    let obj = { 'id': id, 'comment_like': like };
+    let body = JSON.stringify(obj);
+    return this.http.patch(url, body, this.options)
+                    .catch((error: any)=> { return Observable.throw(error);});
   }
 }
